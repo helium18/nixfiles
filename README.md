@@ -1,2 +1,3 @@
-# nux
-hi there :)
+# awesomewm + nix dotfiles
+
+currently a wip, 
