@@ -101,6 +101,10 @@
 
   programs.neovim.defaultEditor = true;
 
+  # make fish the default editor
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

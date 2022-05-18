@@ -11,6 +11,10 @@
     rofi
     kitty
     maim
+    pfetch
+
+    # fonts
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # dev
     gh # github cli
