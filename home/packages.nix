@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config = {
+    allowUnfree = true;
+    nativeOnly = true;
+  };
+
   home.packages = with pkgs; [
     # utils
     rofi
@@ -10,6 +15,8 @@
     # dev
     gh # github cli
     rnix-lsp # nix-lsb
+    vscode
+    sumneko-lua-language-server
 
     # daily
     chromium
