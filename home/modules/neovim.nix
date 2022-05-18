@@ -7,7 +7,7 @@
     viAlias = true;
     vimAlias = true;
 
-    withNodeJs = true;
+    withNodeJs = true; # coc needs js
 
     plugins = with pkgs.vimPlugins; [
       auto-pairs
