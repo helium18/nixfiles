@@ -48,7 +48,7 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-json',
             \ 'coc-css',
-            \ 'coc-lua'
+            \ 'coc-lua',
             \ ]
 
 let g:indentLine_char = '▏'
