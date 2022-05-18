@@ -1,3 +1,3 @@
-# awesomewm + nix dotfiles
+# my nixos dotfiles 
 
-currently a wip, 
+currently a WIP, hopefully would be usable soon
