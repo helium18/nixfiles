@@ -9,5 +9,6 @@
 
       # modules
       ./modules/git.nix
+      ./modules/neovim.nix
     ];
 }

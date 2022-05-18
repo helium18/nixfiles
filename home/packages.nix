@@ -8,7 +8,8 @@
     maim
 
     # dev
-    gh
+    gh # github cli
+    rnix-lsp # nix-lsb
 
     # daily
     chromium
