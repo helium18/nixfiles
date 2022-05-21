@@ -12,6 +12,7 @@
     kitty
     maim
     pfetch
+    redshift
 
     # fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

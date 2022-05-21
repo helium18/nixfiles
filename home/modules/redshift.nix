@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # redshift needs this to infer the location 
-  services.geoclue2 = {
-    enable = true;
-  };
-
   services.redshift = {
     enable = true;
 
