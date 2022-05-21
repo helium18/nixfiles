@@ -13,5 +13,6 @@
       ./modules/fish.nix
       ./modules/starship.nix
       ./modules/kitty.nix
+      ./modules/redshift.nix
     ];
 }
