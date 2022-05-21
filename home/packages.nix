@@ -14,6 +14,8 @@
     pfetch
     redshift
 
+    # libs
+
     # fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
@@ -25,6 +27,7 @@
 
     # daily
     chromium
+    spotify
   ];
 }
 

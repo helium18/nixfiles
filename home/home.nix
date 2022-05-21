@@ -14,5 +14,6 @@
       ./modules/starship.nix
       ./modules/kitty.nix
       ./modules/redshift.nix
+      ./modules/rofi.nix
     ];
 }
