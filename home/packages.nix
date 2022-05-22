@@ -10,9 +10,9 @@
     # utils
     rofi
     kitty
+    flameshot
     maim
     pfetch
-    redshift
 
     # libs
 
