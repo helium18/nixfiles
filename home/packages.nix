@@ -10,6 +10,7 @@
     # utils
     rofi
     kitty
+    xclip
     flameshot
     maim
     pfetch
