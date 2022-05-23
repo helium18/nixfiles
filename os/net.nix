@@ -4,7 +4,7 @@
   networking = {
 
     wireless = {
-      enable = false # we don't need wpa_cli / wpa_supplicant
+      enable = false; # we don't need wpa_cli / wpa_supplicant
     };
     
     networkmanager = {

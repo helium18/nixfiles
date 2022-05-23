@@ -13,8 +13,6 @@
       # services
       ./services/xserver.nix
       ./services/tlp.nix
-      ./services/picom.nix
-      ./services/redshift.nix
     ];
 
   nixpkgs.config.allowUnfree = true;

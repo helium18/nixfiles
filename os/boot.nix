@@ -4,7 +4,8 @@
   boot = {
     loader = {
       systemd-boot.enable = true;
-      efi.cantouchefivariables = true;
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
     };
 
     # splash screen while logging in
@@ -13,12 +14,12 @@
     };
 	
     # latest kernel
-    kernelpackages = pkgs.linuxpackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
-    initrd.kernelmodules = [ "amdgpu" ]; # load amdgpu first
+    initrd.kernelModules = [ "amdgpu" ]; # load amdgpu first
 
     # kernel boot parameters
-    kernelparams = [
+    kernelParams = [
       "quiet"
       "splash"
       "video=svideo-1:d"

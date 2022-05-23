@@ -4,18 +4,20 @@
   services.redshift = {
     enable = true;
 
-    provider = "geoclue2";
+    latitude = 18.63;
+    longitude = 73.73;
 
     temperature = {
       day = 4400;
       night = 4400;
     };
 
-    settings.redshift = {
-      brightness-day = "0.6";
-      brightness-night = "0.6";
+    settings = {
+      redshift = {
+        brightness-night = "0.6";
+        brightness-day = "0.6";
+      };
     };
   };
 }
-
 
