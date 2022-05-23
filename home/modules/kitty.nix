@@ -12,7 +12,7 @@
       window_padding_width = "6 20 20 20";
 
       # font
-      font_size = 14;
+      font_size = 15;
       font_family = "JetBrains Mono Regular Nerd Font Complete Mono";
       bold_font = "JetBrains Mono Bold Nerd Font Complete Mono";
       italic_font = "JetBrains Mono Italic Nerd Font Complete Mono";

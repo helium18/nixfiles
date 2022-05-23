@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  # let redshift infer location to get time
+  services.geoclue2 = {
+    enable = true;
+  };
+
   services.redshift = {
     enable = true;
 
@@ -17,5 +22,3 @@
     };
   };
 }
-
-

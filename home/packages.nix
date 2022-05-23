@@ -7,18 +7,26 @@
   };
 
   home.packages = with pkgs; [
-    # utils
+    # wm utils
     rofi
     kitty
-    xclip
+    xfce.thunar
     flameshot
     maim
+
+    # utils
+    neofetch
     pfetch
+    powertop
+    xclip
+    acpi
+    glxinfo
 
-    # libs
-
-    # fonts
+    # ricing
+    ## fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    ## icons
+    arc-icon-theme
 
     # dev
     gh # github cli
@@ -29,6 +37,7 @@
     # daily
     chromium
     spotify
+    safeeyes
   ];
 }
 
