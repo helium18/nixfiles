@@ -22,7 +22,7 @@
     kernelParams = [
       "quiet"
       "splash"
-      "video=svideo-1:d"
+      #"video=svideo-1:d"
       "radeon.si_support=0"
       "radeon.cik_support=0" # disables radeon cik(sea island) support
       "amdgpu.si_support=0"

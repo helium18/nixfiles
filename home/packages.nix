@@ -17,8 +17,11 @@
     # utils
     neofetch
     pfetch
+    cava
     powertop
     xclip
+    unzip
+    pciutils
     acpi
     glxinfo
 
@@ -26,12 +29,15 @@
     ## fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ## icons
-    arc-icon-theme
+    arc-icon-theme 
 
     # dev
     gh # github cli
     rnix-lsp # nix-lsb
+    python38
     vscode
+    rustup
+    jdk
     sumneko-lua-language-server
 
     # daily

@@ -11,6 +11,8 @@
 
       layout = "us";
 
+      exportConfiguration = true; # export configuration to /etc/x11/xorg.conf
+
       # touchpad 
       libinput = {
         enable = true;
@@ -28,7 +30,12 @@
       };
 
       # drivers
-      videoDrivers = [ "nvidia" "amdgpu" "radeon" ];
+      videoDrivers = [ "nvidia" ];
+      screenSection = ''
+        Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+        Option         "AllowIndirectGLXProtocol" "off"
+        Option         "TripleBuffer" "on"
+      ''; # fix screen tearing
 
       desktopManager = {
         # work around to make nix detect a wm installed with HM
