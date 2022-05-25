@@ -13,9 +13,16 @@
       # services
       ./services/xserver.nix
       ./services/tlp.nix
+<<<<<<< HEAD
+=======
+      #./services/safeeyes.nix
+>>>>>>> master
     ];
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
 
   time.timeZone = "Asia/Kolkata";
 

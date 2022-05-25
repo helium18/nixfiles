@@ -1,22 +1,30 @@
 { config, pkgs, ... }:
 
-{
+let 
+  unstable = import <unstable> {
+    config.allowUnfree = true;
+    config.nativeOnly = true;
+  };
+in {
   nixpkgs.config = {
     allowUnfree = true;
     nativeOnly = true;
   };
-
-  home.packages = with pkgs; [
+  
+  home.packages = with unstable; [
     # wm utils
-    rofi
-    kitty
     xfce.thunar
+    lxappearance
     flameshot
     maim
 
     # utils
     neofetch
     pfetch
+<<<<<<< HEAD
+=======
+    exa
+>>>>>>> master
     cava
     powertop
     xclip
@@ -36,6 +44,10 @@
     rnix-lsp # nix-lsb
     python38
     vscode
+<<<<<<< HEAD
+=======
+    gitui
+>>>>>>> master
     rustup
     jdk
     sumneko-lua-language-server
