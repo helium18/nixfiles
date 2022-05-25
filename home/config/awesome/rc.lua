@@ -15,6 +15,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -220,6 +221,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             mytextclock,
             -- s.mylayoutbox,
+            volume_widget(),
             battery_widget(),
         },
     }

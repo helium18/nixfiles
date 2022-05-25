@@ -15,6 +15,8 @@
       corner-radius = 15;
       round-borders = 15;
       
+      unredir-if-possible = false;
+
       use-damage = false;
 
       rounded-corners-exclude = [
