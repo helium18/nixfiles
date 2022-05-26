@@ -16,13 +16,19 @@ in {
     xfce.thunar
     lxappearance
     flameshot
+    libinput-gestures
+    wmctrl
     maim
 
     # utils
     neofetch
     pfetch
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    playerctl
+>>>>>>> master
     exa
 >>>>>>> master
     cava

@@ -3,6 +3,6 @@
 {
   users.users.helium = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; 
+    extraGroups = [ "wheel" "networkmanager" "input" ]; 
   };
 }

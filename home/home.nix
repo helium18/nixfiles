@@ -18,6 +18,7 @@
 
       # services 
       ./modules/services/picom.nix
+      ./modules/services/libinput-gestures.nix
       ./modules/services/redshift.nix
       ./modules/services/systemd.nix
     ];
