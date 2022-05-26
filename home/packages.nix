@@ -16,11 +16,14 @@ in {
     xfce.thunar
     lxappearance
     flameshot
+    libinput-gestures
+    wmctrl
     maim
 
     # utils
     neofetch
     pfetch
+    playerctl
     exa
     cava
     powertop
