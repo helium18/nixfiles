@@ -23,14 +23,8 @@ in {
     # utils
     neofetch
     pfetch
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
     playerctl
->>>>>>> master
     exa
->>>>>>> master
     cava
     powertop
     xclip
@@ -50,10 +44,7 @@ in {
     rnix-lsp # nix-lsb
     python38
     vscode
-<<<<<<< HEAD
-=======
     gitui
->>>>>>> master
     rustup
     jdk
     sumneko-lua-language-server

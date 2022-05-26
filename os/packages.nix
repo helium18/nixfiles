@@ -13,11 +13,7 @@
 
   # make fish the default shell
   programs.fish.enable = true;
-<<<<<<< HEAD
-  users.defaultUserShell = pkgs.fish;
-=======
   users.defaultUserShell = pkgs.zsh;
->>>>>>> master
 
   nix = {
     package = pkgs.nixFlakes; # or versioned attributes like nixVersions.nix_2_8
