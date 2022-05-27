@@ -24,7 +24,7 @@
       color2 = "#c9d05c";
       color3 = "#ffd35c";
       color4 = "#7eceee";
-      color5 = "#9091d9";
+      color5 = "#9fafd9";
       color6 = "#baeaff";
       color7 = "#eeeeee";
       color8 = "#4c4c4c";
@@ -32,7 +32,7 @@
       color10 = "#c9d16d";
       color11 = "#ffc24b";
       color12 = "#6fcfef";
-      color13 = "#9081d9";
+      color13 = "#9fa1d9";
       color14 = "#aaeaff";
       color15 = "#dddddd";
       background = "#2c2c2c";

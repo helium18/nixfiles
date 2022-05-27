@@ -37,7 +37,8 @@ highlight VertSplit ctermfg=NONE
 syntax on                   " syntax highlighting
 
 autocmd VimEnter * set mouse=n " mouse events
-autocmd VimEnter * hi CocHintSign ctermfg=Gray
+autocmd VimEnter * hi airline_c  ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi airline_tabfill ctermbg=NONE guibg=NONE
 
 " --------------------------------------------------------------
 " coc-plugins
@@ -53,11 +54,11 @@ autocmd VimEnter * hi CocHintSign ctermfg=Gray
 
 let g:indentLine_char = '▏'
 
-let g:airline_powerline_fonts=1
-let g:airline_separators=1
-let g:airline#extensions#tabline#enabled = 0
-" let g:tmuxline_powerline_separators = 0
-let g:airline_theme = 'minimalist'
+let g:airline_powerline_fonts=0
+let g:airline_separators=0
+" let g:airline#extensions#tabline#enabled = 0
+let g:tmuxline_powerline_separators = 0
+let g:airline_theme = 'tender'
 
 " Enable tender
 colorscheme tender

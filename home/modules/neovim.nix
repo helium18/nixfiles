@@ -19,12 +19,20 @@
       vim-css-color
       vim-parinfer 
       vim-closetag
-      tender-vim
       indentLine
       vim-devicons
       vim-toml
       jsonc-vim
       vim-smoothie
+      (tender-vim.overrideAttrs (oldAttrs: rec {
+        version = "2022-5-27";
+        src = pkgs.fetchFromGitHub {
+          owner = "helium18";
+          repo = "tender.vim";
+          rev = "18c44bd8b67af8aba4ab8ca22317d202db7584d0";
+          sha256 = "sha256-/7zM9VgQmtn7oxXX8YVbkdEF6VOdOYHYLFVmrC5sCzU=";
+        };
+      }))
 
       # coc plugins
       coc-pyright
