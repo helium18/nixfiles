@@ -15,7 +15,7 @@
     settings = {
       redshift = {
         brightness-night = "0.4";
-        brightness-day = "0.4";
+        brightness-day = "0.7";
       };
     };
   };

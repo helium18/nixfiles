@@ -41,15 +41,15 @@ autocmd VimEnter * hi CocHintSign ctermfg=Gray
 
 " --------------------------------------------------------------
 " coc-plugins
-let g:coc_global_extensions = [
-            \ 'coc-rust-analyzer', 
-            \ 'coc-tsserver',
-            \ 'coc-ccls',
-            \ 'coc-html',
-            \ 'coc-json',
-            \ 'coc-css',
-            \ 'coc-lua',
-            \ ]
+" let g:coc_global_extensions = [
+"             \ 'coc-rust-analyzer', 
+"             \ 'coc-tsserver',
+"             \ 'coc-ccls',
+"             \ 'coc-html',
+"             \ 'coc-json',
+"             \ 'coc-css',
+"             \ 'coc-lua',
+"             \ ]
 
 let g:indentLine_char = '▏'
 
