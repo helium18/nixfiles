@@ -1,20 +1,16 @@
 { config, pkgs, ... }:
 
-let 
-  unstable = import <unstable> {
-    config.allowUnfree = true;
-    config.nativeOnly = true;
-  };
-in {
+{
   nixpkgs.config = {
     allowUnfree = true;
     nativeOnly = true;
   };
   
-  home.packages = with unstable; [
+  home.packages = with pkgs; [
     # wm utils
     xfce.thunar
     lxappearance
+    bottom
     flameshot
     libinput-gestures
     wmctrl
@@ -28,9 +24,11 @@ in {
     cava
     powertop
     xclip
+    xfce.xfce4-terminal
     unzip
     pciutils
     acpi
+    fsearch
     glxinfo
 
     # ricing
@@ -44,6 +42,7 @@ in {
     rnix-lsp # nix-lsb
     python38
     vscode
+    lua
     gitui
     rustup
     jdk
@@ -52,6 +51,8 @@ in {
     # daily
     chromium
     spotify
+    keepassxc
+    obsidian
     safeeyes
   ];
 }
