@@ -51,6 +51,7 @@
     # daily
     chromium
     spotify
+    tdesktop
     keepassxc
     obsidian
     safeeyes
