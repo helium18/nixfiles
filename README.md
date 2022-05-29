@@ -7,7 +7,7 @@
 </div>
 <br>
 <a href="https://nixos.org/"><img alt="NixOS logo" height="160" align = "left" src="https://nixos.wiki/images/thumb/2/20/Home-nixos-logo.png/311px-Home-nixos-logo.png"></a>
-Ok, so this was much more tedious that expected, anyways, glad to see you here 👾. I use NixOS with i3wm as a daily driver and home-manager to manage user-configuration files.
+Ok, so this was much more tedious than expected, anyways, glad to see you here 👾. I use NixOS with i3wm as a daily driver and home-manager to manage user-configuration files.
 <br><br>
 Feel free to take inspiration (or steal ;]) stuff from my dotfiles. If something's unclear consider raising an issue and I'll be glad to help 👍
 
