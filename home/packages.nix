@@ -5,16 +5,20 @@
     allowUnfree = true;
     nativeOnly = true;
   };
-  
+
   home.packages = with pkgs; [
     # wm utils
-    xfce.thunar
-    lxappearance
-    bottom
+    cinnamon.nemo
+    bottom  
+    brightnessctl
     flameshot
     libinput-gestures
-    wmctrl
-    maim
+    xdotool
+    acpid # for acpi_listen used by `refresh` script in ~/.config/scripts
+    eww
+    feh # bg
+    maim # ss
+    autotiling # tiling for i3wm
 
     # utils
     neofetch
@@ -24,7 +28,6 @@
     cava
     powertop
     xclip
-    xfce.xfce4-terminal
     unzip
     pciutils
     acpi
@@ -36,13 +39,16 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ## icons
     arc-icon-theme 
+    papirus-icon-theme
+    lxappearance
 
     # dev
     gh # github cli
-    rnix-lsp # nix-lsb
+    rnix-lsp # nix-lsp
     python38
     vscode
     lua
+    jq # json cli parsing
     gitui
     rustup
     jdk
@@ -52,8 +58,10 @@
     chromium
     spotify
     tdesktop
+    inkscape
     keepassxc
     obsidian
+    gimp
     safeeyes
   ];
 }

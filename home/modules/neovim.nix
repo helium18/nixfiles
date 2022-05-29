@@ -29,8 +29,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "helium18";
           repo = "tender.vim";
-          rev = "18c44bd8b67af8aba4ab8ca22317d202db7584d0";
-          sha256 = "sha256-/7zM9VgQmtn7oxXX8YVbkdEF6VOdOYHYLFVmrC5sCzU=";
+          rev = "b4e802ca58226e89647f140caf0f94432816daa2";
+          sha256 = "sha256-hbpAJvouBjOv/myh+djA8rUZG+EOPm5Hti3BF3eFbFQ=";
         };
       }))
 

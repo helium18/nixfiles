@@ -12,7 +12,7 @@
     fadeSteps = [ "0.06" "0.06" ];
 
     extraOptions = ''
-      corner-radius = 15;
+      corner-radius = 18;
       round-borders = 15;
       
       unredir-if-possible = false;
