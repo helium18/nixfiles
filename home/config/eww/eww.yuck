@@ -89,7 +89,7 @@
 ; battery window
 (defwidget battery_window[]
   (box :class "battery" :orientation "v"
-    (circular-progress :class "battery-progress" :value battery :thickness 5 :start-at 26 :clockwise false)
+    ; (circular-progress :class "battery-progress" :value battery :thickness 5 :start-at 26 :clockwise false)
     (label :text battery_status)
     (label :text battery_rem)
   )

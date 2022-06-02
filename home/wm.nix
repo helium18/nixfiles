@@ -117,9 +117,6 @@ in {
             # exit i3 (logs you out of your X session)
             "${super}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'\"";
 
-            # resize mode
-            "${super}+r" = "mode \"resize\"";
-
             # close window
             "${super}+q" = "kill";
           };
@@ -157,6 +154,28 @@ in {
             }
           ];
         };
+        extraConfig = ''
+          # resize window (you can also use the mouse for that)
+          mode "resize" {
+            # These bindings trigger as soon as you enter the resize mode
+
+            # Pressing left will shrink the window’s width.
+            # Pressing right will grow the window’s width.
+            # Pressing up will shrink the window’s height.
+            # Pressing down will grow the window’s height.
+            bindsym ${left}       resize shrink width 10 px or 10 ppt
+            bindsym ${down}       resize grow height 10 px or 10 ppt
+            bindsym ${up}         resize shrink height 10 px or 10 ppt
+            bindsym ${right}      resize grow width 10 px or 10 ppt
+
+            # back to normal: Enter or Escape or Mod4+r
+            bindsym Return mode "default"
+            bindsym Escape mode "default"
+            bindsym ${super} mode "default"
+          }
+
+          bindsym ${super} mode "resize"
+        '';
       };
     };
   };

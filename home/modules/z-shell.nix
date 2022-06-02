@@ -17,6 +17,7 @@
     shellAliases = {
       ls = "exa --icons"; # exa superiority
       l = "exa --icons -a";
+      grep = "grep";
     }; 
 
     initExtraBeforeCompInit = ''

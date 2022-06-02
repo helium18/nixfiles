@@ -23,14 +23,18 @@
     # utils
     neofetch
     pfetch
+    (callPackage ./derivations/envycontrol.nix { })
+    # (callPackage ./derivations/gh-eco/default.nix { })
     playerctl
     exa
+    ripgrep
     cava
     powertop
     xclip
     unzip
     pciutils
     acpi
+    gparted
     fsearch
     glxinfo
 
@@ -49,6 +53,7 @@
     vscode
     lua
     jq # json cli parsing
+    bc
     gitui
     rustup
     jdk
