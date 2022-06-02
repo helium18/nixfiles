@@ -12,7 +12,7 @@ Ok, so this was much more tedious than expected, anyways, glad to see you here ğ
 Feel free to take inspiration (or steal ;]) stuff from my dotfiles. If something's unclear consider raising an issue and I'll be glad to help ğŸ‘
 
 <br><br>
-<img src="https://user-images.githubusercontent.com/86223025/170879044-afe8296e-28df-4dd6-8708-894262b3c6d7.png" alt="image showing the desktop" align="right" width="58%">
+<img src="https://user-images.githubusercontent.com/86223025/170879044-afe8296e-28df-4dd6-8708-894262b3c6d7.png" alt="image showing the desktop" align="right" width="40%">
 
 | Type  | Used |
 | :---:  | :---:  |
