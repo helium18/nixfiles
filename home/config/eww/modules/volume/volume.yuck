@@ -1,0 +1,28 @@
+; -- Variables -- 
+(defvar vol_with_icon "")
+(defvar vol_level "0")
+(defvar volume "./modules/volume/scripts/volume")
+
+; -- Widgets --
+(defwidget volume[]
+  (button :class "volume-btn"
+    :onclick "eww open volume_window --toggle && ${volume} update" vol_with_icon
+  )
+)
+
+(defwidget volume_win[]
+  (box :class "volume-window" :orientation "v"
+    (button :class "volume-info" :onclick "${volume} mute" vol_with_icon)
+    (scale :value vol_level :min 0 :max 101 :onchange "${volume} set {}")
+  )
+)
+
+; -- Windows -- 
+(defwindow volume_window
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry :x "87%" :y "6%" :width "12%" :height "10%")
+  :anchor "top center"
+  :reserve (struts :side "top" :distance "4%")
+  (volume_win)
+)

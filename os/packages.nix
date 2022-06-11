@@ -3,7 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     neovim 
+    sudo
     wget
+    easyeffects
+    helvum
+    pamixer
   ];
 
   # make neovim the default editor

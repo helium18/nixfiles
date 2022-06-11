@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+get_volume() {
+    pamixer --get-volume
+}
+
+is_mute() {
+    pamixer --get-mute
+}
+
+icon() {
+    vol=`get_volume`
+    mute=`is_mute`
+    
+    if [[ $vol == 0 || "$mute" == "true" ]]; then 
+        echo "婢 muted"
+    
+    elif [[ $vol < 20 ]]; then
+        echo "奄 $vol"
+        
+    elif [[ $vol < 60 ]]; then
+        echo "奔 $vol"
+    
+    else 
+        echo "墳 $vol"
+        
+    fi
+}
+
+update() {
+    vol=`get_volume`
+    mute=`is_mute`
+    
+    if [[ "$mute" == "true" ]]; then
+        eww update vol_level="0"
+    
+    else
+        eww update vol_level="$vol"
+    
+    fi
+
+    # vol_with_icon refers to the button on the bar which displays the info
+    vol_with_icon=`icon`
+    eww update vol_with_icon="$vol_with_icon"
+}
+
+if [[ "$1" == "up" ]]; then
+    pamixer -i 5
+
+elif [[ "$1" == "down" ]]; then
+    pamixer -d 5
+
+elif [[ "$1" == "set" ]]; then
+    vol=`echo "$2 / 1" | bc` # pamixer doesn't allow floating points
+    pamixer --set-volume $vol
+    update
+
+elif [[ "$1" == "mute" ]]; then
+    pamixer -t
+
+elif [[ "$1" == "update" ]]; then
+    update
+        
+elif [[ "$1" == "icon" ]]; then 
+    icon
+
+else
+    vol=`get_volume`
+    echo "$vol"
+
+fi

@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+player() {
+    playerctl metadata | grep title | awk '{print ($1)}'
+}
+
+track() {
+    track=$(playerctl metadata title)
+    
+    # Echo the track if it is present
+    if [[ $track != "" ]] ; then
+        echo " $track"
+    
+    else 
+        echo "Nothing playing"
+    fi
+}
+
+next() {
+    playerctl next
+}
+
+prev() {
+    playerctl previous
+}
+
+pause() {
+    playerctl pause
+}
+
+play() {
+    playerctl play
+}
+
+play_pause() {
+    playerctl play-pause
+}
+
+if [[ "$1" == "--player" ]]; then 
+    player
+
+elif [[ "$1" == "--track" ]]; then 
+    track
+    
+elif [[ "$1" == "--next" ]]; then
+    next
+    
+elif [[ "$1" == "--prev" ]]; then
+    prev
+
+elif [[ "$1" == "--pause" ]]; then
+    pause
+    
+elif [[ "$1" == "--play" ]]; then
+    play
+    
+elif [[ "$1" == "--play-pause" ]]; then
+    play_pause
+
+elif [[ "$1" == "--update" ]]; then
+
+    # update the metadata only when the button is clicked and window is open
+    while [ "$(eww get music_open)" == "true" ]
+    do
+        track=`track`
+        player=`player`
+        eww update track="${track}"
+        eww update player="${player}"
+        sleep 0.1s
+    done
+
+fi

@@ -119,16 +119,19 @@ in {
 
             # close window
             "${super}+q" = "kill";
+            
+            # resize
+            "${super}+r" = "mode resize";
           };
 
           startup = [
             {
-              command = "${pkgs.feh}/bin/feh --bg-scale ~/Downloads/cloudy.png"; # fix me (cloudy.png -> bg.png)
+              command = "${pkgs.feh}/bin/feh --bg-scale ~/Downloads/mount.jpg"; # fix me (cloudy.png -> bg.png)
               always = true;
               notification = false;
             }
             {
-              command = "eww open mainbar";
+              command = "eww open panel";
               always = false;
               notification = false;
             }
@@ -154,28 +157,6 @@ in {
             }
           ];
         };
-        extraConfig = ''
-          # resize window (you can also use the mouse for that)
-          mode "resize" {
-            # These bindings trigger as soon as you enter the resize mode
-
-            # Pressing left will shrink the window’s width.
-            # Pressing right will grow the window’s width.
-            # Pressing up will shrink the window’s height.
-            # Pressing down will grow the window’s height.
-            bindsym ${left}       resize shrink width 10 px or 10 ppt
-            bindsym ${down}       resize grow height 10 px or 10 ppt
-            bindsym ${up}         resize shrink height 10 px or 10 ppt
-            bindsym ${right}      resize grow width 10 px or 10 ppt
-
-            # back to normal: Enter or Escape or Mod4+r
-            bindsym Return mode "default"
-            bindsym Escape mode "default"
-            bindsym ${super} mode "default"
-          }
-
-          bindsym ${super} mode "resize"
-        '';
       };
     };
   };

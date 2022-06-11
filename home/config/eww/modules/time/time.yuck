@@ -1,0 +1,33 @@
+; -- Variables 
+(defpoll time :interval "1s" "date +\"%I:%M\"")
+(defpoll day :interval "1s" "date +\"%e\"")
+(defpoll month :interval "1s" "date +\%m\"")
+(defpoll year :interval "1s" "date +\%Y\"")
+
+; -- Widgets -- 
+(defwidget time[]
+  (box :class "time" :orientation "h"
+    (button :class "time-btn" :onclick "eww open calendar --toggle" " ${time}")
+  )
+)
+
+(defwidget calendar_window[]
+  (box :class "calendar-box" :orientation "v"
+    (calendar :class "calendar"
+      :day day
+      :month month
+      :year year
+    )
+  )
+)
+
+; -- Windows -- 
+(defwindow calendar
+  :monitor 0
+  :windowtype "normal"
+  :wmignore "true"
+  :geometry (geometry :x "40%" :y "6%" :width "14%" :height "10%")
+  :anchor "top center"
+  :reserve (struts :side "top" :distance "5%")
+  (calendar_window)
+)

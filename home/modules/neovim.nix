@@ -13,6 +13,7 @@
       auto-pairs
       vim-nix
       vim-airline
+      editorconfig-vim
       vim-airline-themes
       nerdtree
       tabular
@@ -24,6 +25,16 @@
       vim-toml
       jsonc-vim
       vim-smoothie
+
+      # yuck-vim isn't present in nixpkgs
+      (fennel-vim.overrideAttrs (oldAttrs: rec { 
+        src = pkgs.fetchFromGitHub {
+          owner = "elkowar";
+          repo = "yuck.vim";
+          rev = "6dc3da77c53820c32648cf67cbdbdfb6994f4e08";
+          sha256 = "sha256-lp7qJWkvelVfoLCyI0aAiajTC+0W1BzDhmtta7tnICE=";
+        };
+      }))
       (tender-vim.overrideAttrs (oldAttrs: rec {
         version = "2022-5-27";
         src = pkgs.fetchFromGitHub {

@@ -28,10 +28,10 @@
         source = ./config/scripts;
         target = "./.config/scripts";
       };
-      "eww" = {
-        source = ./config/eww;
-        target = "./.config/eww";
-      };
+      # "eww" = {
+      #   source = ./config/eww;
+      #   target = "./.config/eww";
+      # };
     };
 
   # hm config

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nixpkgs.config = {
@@ -8,17 +8,20 @@
 
   home.packages = with pkgs; [
     # wm utils
-    cinnamon.nemo
+    gnome.nautilus
+    obs-studio
     bottom  
     brightnessctl
+    (callPackage ./derivations/eww/eww.nix { })
     flameshot
     libinput-gestures
     xdotool
     acpid # for acpi_listen used by `refresh` script in ~/.config/scripts
-    eww
     feh # bg
     maim # ss
     autotiling # tiling for i3wm
+    pavucontrol
+    vlc
 
     # utils
     neofetch
@@ -40,7 +43,7 @@
 
     # ricing
     ## fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
     ## icons
     arc-icon-theme 
     papirus-icon-theme
@@ -49,13 +52,12 @@
     # dev
     gh # github cli
     rnix-lsp # nix-lsp
-    python38
     vscode
-    lua
     jq # json cli parsing
+    qalculate-gtk
     bc
     gitui
-    rustup
+    # rustup
     jdk
     sumneko-lua-language-server
 
@@ -63,7 +65,9 @@
     chromium
     spotify
     tdesktop
+    libsForQt5.okular
     inkscape
+    zoom-us
     keepassxc
     obsidian
     gimp
