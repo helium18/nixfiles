@@ -24,8 +24,6 @@
   };
   services.flatpak.enable = true;
 
-  powerManagement.enable = true;
-  
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
