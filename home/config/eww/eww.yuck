@@ -1,0 +1,3 @@
+; -- Windows --
+(include "./windows/panel.yuck") ; Main top panel
+(include "./windows/notifc.yuck") ; Notification center 

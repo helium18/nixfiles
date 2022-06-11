@@ -20,9 +20,26 @@
 
     # kernel boot parameters
     kernelParams = [
+      # boot screen
       "quiet"
       "splash"
-      #"video=svideo-1:d"
+
+      # perf
+      # "mitigations=off"
+      "nowatchdog"
+      # "cryptomgr.notests"
+      # "initcall_debug"
+      # "no_timer_check"
+      # "noreplace-smp"
+      # "page_alloc.shuffle=1"
+      # "rcupdate.rcu_expedited=1"
+      # "tsc=reliable"
+
+      # acpi
+      "pci=nommconf"
+
+      # video
+      "video=svideo-1:d"
       "radeon.si_support=0"
       "radeon.cik_support=0" # disables radeon cik(sea island) support
       "amdgpu.si_support=0"

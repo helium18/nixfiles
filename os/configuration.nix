@@ -13,10 +13,16 @@
       # services
       ./services/xserver.nix
       ./services/tlp.nix
-      #./services/safeeyes.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    };
+  };
+  services.flatpak.enable = true;
 
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;

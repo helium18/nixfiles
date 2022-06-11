@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+cwd="$HOME/.config/scripts"
+
+$cwd/volume
+
+refresh() {
+    $cwd/volume 
+}
+
+headphone="jack"
+
+cmd="acpi_listen | grep $headphone"
+
+stdbuf -oL $cmd |
+  while IFS= read -r line
+  do
+    refresh
+  done

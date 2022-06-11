@@ -1,7 +1,25 @@
 { config, pkgs, ... }:
 
 {
-  sound.enable = true;
+  # sound
+  services.pipewire = {
+    enable = true;
+    audio = {
+      enable = true;
+    };
+    pulse = {
+      enable = true;
+    };
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    wireplumber = {
+      enable = true;
+    };
+  };
+
+  powerManagement.enable = true;
 
   hardware = {
     cpu.amd.updateMicrocode = true;
@@ -17,18 +35,14 @@
     };
 
     nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       nvidiaPersistenced = true;
 
       prime = {
         offload.enable = true;
-
-	amdgpuBusId = "PCI:6:0:0";
+	    amdgpuBusId = "PCI:6:0:0";
         nvidiaBusId = "PCI:1:0:0";
       };
-    };
-
-    pulseaudio = {
-      enable = true;
     };
 
     enableAllFirmware = true;

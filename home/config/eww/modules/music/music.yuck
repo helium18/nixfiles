@@ -1,0 +1,39 @@
+; -- Variables --
+(defvar track "")
+(defvar player "")
+(defvar music "./modules/music/scripts/music")
+(defvar music_open false)
+
+; -- Widgets -- 
+(defwidget music_buttons[]
+  (box :class "music-box" :orientation "v"
+    ; track
+    (box :class "music-info" :orientation "v"
+      (label :text player :class "m1")
+      (label :text track :limit-width 15 :class "m2")
+    )
+    ; buttons
+    (box :class "media-ctrls" :orientation "h"
+      (button :class "prev" :onclick "${music} --prev" "玲")
+      (button :class "play-pause" :onclick "${music} --play-pause" "")
+      (button :class "next" :onclick "${music} --next" "怜")
+    )
+  )
+)
+
+(defwidget music[] ; Music window
+  (button :class "music-btn"
+    :timeout "1h"
+    :onclick { music_open ? "eww update music_open=false && eww close music_hover" : "eww open music_hover && eww update music_open=true && ${music} --update" } ""
+  )
+)
+
+; -- Windows -- 
+(defwindow music_hover
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry :x "85%" :y "6%" :width "11%" :height "20px")
+  :anchor "top center"
+  :reserve (struts :side "top" :distance "4%")
+  (music_buttons)
+)

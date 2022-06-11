@@ -14,7 +14,7 @@ in {
     theme = {
       "*" = {
         background-color = mkLiteral "#2c2c2c";
-        text-color = mkLiteral "White";
+        text-color = mkLiteral "#cccccc";
       };
 
       "element-icon" = { 
@@ -34,34 +34,35 @@ in {
       };
 
       "horibox" = {
-          orientation = mkLiteral "vertical";
-          children = [ "entry" "listview" ];
+        orientation = mkLiteral "vertical";
+        children = [ "entry" "listview" ];
       };
 
       "listview" = {
-          layout = mkLiteral "vertical";
-          spacing = mkLiteral "8px";
-          lines = 5;
+        layout = mkLiteral "vertical";
+        spacing = mkLiteral "8px";
+        lines = 5;
       };
 
       "entry" = {
-          border-radius = mkLiteral "14px";
-          background-color = mkLiteral "#3c3c3c";
-          padding = mkLiteral "13px";
-          expand = false;
-          width = mkLiteral "10em";
-          margin = mkLiteral "0px 0px 40px 0px";
+        border-radius = mkLiteral "14px";
+        background-color = mkLiteral "#3c3c3c";
+        padding = mkLiteral "13px";
+        expand = false;
+        width = mkLiteral "10em";
+        margin = mkLiteral "0px 0px 40px 0px";
       };
 
       "element" = {
-          padding = mkLiteral "8px 5px";
+        padding = mkLiteral "8px 5px";
       };
 
       "element selected" = {
-          background-color = mkLiteral "#baeaff";
-          text-color = mkLiteral "black";
-          border-radius = mkLiteral "10px";
-          padding = mkLiteral "10px 0px";
+        # background-color = mkLiteral "#baeaff";
+        background-color = mkLiteral "#3d3d3d";
+        text-color = mkLiteral "#eeeeee";
+        border-radius = mkLiteral "10px";
+        padding = mkLiteral "10px 0px";
       };
       
       "element-text, element-icon" = {

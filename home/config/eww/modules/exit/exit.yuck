@@ -1,0 +1,26 @@
+; -- Widgets -- 
+(defwidget exit[]
+  (button :class "exit-btn"
+    :onclick "eww open exit_screen --toggle" ""
+  )
+)
+
+(defwidget exit_window[]
+  (box :class "exit-window" :orientation "v"
+    (button :class "logoff" :onclick "i3-msg exit" " Logout")
+    (button :class "poweroff" :onclick "poweroff" " Poweroff")
+    (button :class "reboot" :onclick "reboot" "累 Reboot")
+  )
+)
+
+; -- Windows --
+(defwindow exit_screen
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry :x "90%" :y "6%" :width "4%" :height "1%")
+  :anchor "top center"
+  :reserve (struts :side "top" :distance "4%")
+  (exit_window)
+)
+
+

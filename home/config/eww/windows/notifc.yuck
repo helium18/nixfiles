@@ -1,0 +1,8 @@
+(defwindow notifc
+  :monitor 0
+  :windowtype "normal"
+  :geometry (geometry :x "59%" :y "70px" :width "40%" :height "988px")
+  :anchor "top center"
+  :reserve (struts :side "top" :distance "4%")
+  (label :text "hi")
+)

@@ -11,12 +11,14 @@
         { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "jeffreytse/zsh-vi-mode"; }
         { name = "zsh-users/zsh-completions"; }
+        { name = "zsh-users/zsh-history-substring-search"; }
       ];
     };
 
     shellAliases = {
       ls = "exa --icons"; # exa superiority
       l = "exa --icons -a";
+      grep = "grep";
     }; 
 
     initExtraBeforeCompInit = ''

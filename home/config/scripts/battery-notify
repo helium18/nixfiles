@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+BAT=`ls /sys/class/power_supply | grep BAT | head -n 1`
+LOW_ICON="battery"
+HIGH_ICON="battery"
+LOW_LIMIT="$1"
+UP_LIMIT="$2"
+SOUND_FILE="/home/helium/.config/scripts/sound.ogg" # choose ur location 
+
+status() {
+    status=$(cat /sys/class/power_supply/${BAT}/status)
+
+    echo "${status}"
+}
+
+current_capacity() {
+    bat_per=$(cat /sys/class/power_supply/${BAT}/capacity)
+
+    echo "$bat_per"
+}
+
+play_audio() {
+    paplay "$SOUND_FILE"
+}
+
+while :
+do
+    cur_stat=`status`
+    cur_bat=`current_capacity`
+
+    echo -e "current_stat: $cur_stat \ncurrent_bat: $cur_bat\nup_lim: $UP_LIMIT\nlow_lim: $LOW_LIMIT\n"
+
+    if [[ "$cur_stat" == "Charging" && $cur_bat -ge $UP_LIMIT ]] ; then
+        dunstify -i $HIGH_ICON "Plug out the charger. It's $cur_bat%!"
+        play_audio
+
+    elif [[ "$cur_stat" == "Discharging" && $cur_bat -le $LOW_LIMIT ]] ; then
+        dunstify -i $LOW_ICON "Plug in the charger. Battery's running low at $cur_bat%!"
+        play_audio
+
+    fi
+
+    sleep 10s
+
+done

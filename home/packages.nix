@@ -1,50 +1,63 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nixpkgs.config = {
     allowUnfree = true;
     nativeOnly = true;
   };
-  
+
   home.packages = with pkgs; [
     # wm utils
-    xfce.thunar
-    lxappearance
-    bottom
+    gnome.nautilus
+    obs-studio
+    bottom  
+    brightnessctl
+    (callPackage ./derivations/eww/eww.nix { })
     flameshot
     libinput-gestures
-    wmctrl
-    maim
+    xdotool
+    acpid # for acpi_listen used by `refresh` script in ~/.config/scripts
+    feh # bg
+    maim # ss
+    autotiling # tiling for i3wm
+    pavucontrol
+    vlc
 
     # utils
     neofetch
     pfetch
+    (callPackage ./derivations/envycontrol.nix { })
+    # (callPackage ./derivations/gh-eco/default.nix { })
     playerctl
     exa
+    ripgrep
     cava
     powertop
     xclip
-    xfce.xfce4-terminal
     unzip
     pciutils
     acpi
+    gparted
     fsearch
     glxinfo
 
     # ricing
     ## fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
     ## icons
     arc-icon-theme 
+    papirus-icon-theme
+    lxappearance
 
     # dev
     gh # github cli
-    rnix-lsp # nix-lsb
-    python38
+    rnix-lsp # nix-lsp
     vscode
-    lua
+    jq # json cli parsing
+    qalculate-gtk
+    bc
     gitui
-    rustup
+    # rustup
     jdk
     sumneko-lua-language-server
 
@@ -52,8 +65,12 @@
     chromium
     spotify
     tdesktop
+    libsForQt5.okular
+    inkscape
+    zoom-us
     keepassxc
     obsidian
+    gimp
     safeeyes
   ];
 }
