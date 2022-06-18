@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let 
+let
   super = "Mod4";
   alt = "Mod1";
   scriptsDir = "/home/helium/.config/scripts";
@@ -9,7 +9,8 @@ let
   down = "j";
   up = "k";
   right = "l";
-in { 
+in
+{
   # wm config
   xsession = {
     enable = true;
@@ -21,14 +22,15 @@ in {
         package = pkgs.i3-gaps;
 
         config = rec {
-          bars = [  ];
+          bars = [ ];
 
           window.border = 0;
 
           gaps = {
             inner = 15;
-            # outer = 10;
           };
+
+          floating.modifier = "${super}";
 
           keybindings = {
             "${super}+t" = "exec ${pkgs.kitty}/bin/kitty"; # terminal
@@ -36,17 +38,18 @@ in {
             "Print" = "exec ${pkgs.maim}/bin/maim -s | xclip -selection clipboard -t image/png"; # ss
             "Ctrl+Print" = "exec ${pkgs.maim}/bin/maim | xclip -selection clipboard -t image/png"; # ss
             "Ctrl+Shift+Print" = "exec ${pkgs.flameshot}/bin/flameshot gui"; # ss
+            "XF86Calculator" = "exec ${pkgs.qalculate-gtk}/bin/qalculate-gtk"; # calculator
 
             # function keys
             "XF86AudioMute" = "exec ${scriptsDir}/volume mute";
             "XF86AudioLowerVolume" = "exec ${scriptsDir}/volume down";
             "XF86AudioRaiseVolume" = "exec ${scriptsDir}/volume up";
-            "XF86MonBrightnessDown" = "exec ${scriptsDir}/brightness down"; 
-            "XF86MonBrightnessUp" = "exec ${scriptsDir}/brightness up"; 
+            "XF86MonBrightnessDown" = "exec ${scriptsDir}/brightness down";
+            "XF86MonBrightnessUp" = "exec ${scriptsDir}/brightness up";
             "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
             "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
             "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-            
+
             # change focus 
             "${super}+${left}" = "focus left";
             "${super}+${down}" = "focus down";
@@ -72,12 +75,6 @@ in {
             "${super}+w" = "layout stacking";
             "${super}+s" = "layout tabbed";
             "${super}+e" = "layout toggle split";
-
-            # toggle tiling / floating
-            "${super}+Shift+space" = "floating toggle";
-
-            # change focus between tiling / floating windows
-            "${super}+space" = "focus mode_toggle";
 
             # focus the parent container
             "${super}+a" = "focus parent";
@@ -119,9 +116,13 @@ in {
 
             # close window
             "${super}+q" = "kill";
-            
+
             # resize
             "${super}+r" = "mode resize";
+
+            # floating
+            "${super}+Shift+space" = "floating toggle";
+            "${super}+space" = "focus mode_toggle";
           };
 
           startup = [
@@ -157,6 +158,15 @@ in {
             }
           ];
         };
+
+        extraConfig = ''
+          assign [class="Spotify"] 1
+          assign [class="Chromium-browser"] 2
+          assign [class="kitty"] 3
+          assign [class="Qalculate-gtk"] 3
+          assign [class="TelegramDesktop"] 4
+          assign [class="obsidian"] 4
+        '';
       };
     };
   };

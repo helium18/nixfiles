@@ -71,8 +71,35 @@
         };
       }));
 
-      settings = builtins.readFile ../config/neovim/coc-settings.json;
+      settings = {
+        "rust-analyzer.checkOnSave.command" = "clippy";
+        "rust-analyzer.hoverActions.linksInHover" = true;
+        "typescript.inlayHints.enumMemberValues.enabled" = true;
+        "typescript.inlayHints.functionLikeReturnTypes.enabled" = true;
+        "typescript.inlayHints.parameterNames.enabled" = "all";
+        "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName" = true;
+        "typescript.inlayHints.parameterTypes.enabled" = true;
+        "typescript.inlayHints.propertyDeclarationTypes.enabled" = true;
+        "typescript.inlayHints.variableTypes.enabled" = true;
+        "coc.preferences.formatOnSaveFiletypes" = ["*"];
+        "eslint.filetypes" = [
+          "javascript"
+          "typescript"
+          "typescriptreact"
+          "javascriptreact"
+          "json"
+        ];
+        "languageserver" = {
+          "nix" = {
+            "command" = "rnix-lsp";
+            "filetypes" = [
+              "nix"
+            ];
+          };
+        };
+      };
     };
+
   };
 }
 

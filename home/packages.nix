@@ -10,9 +10,9 @@
     # wm utils
     gnome.nautilus
     obs-studio
-    bottom  
+    bottom
     brightnessctl
-    (callPackage ./derivations/eww/eww.nix { })
+    eww
     flameshot
     libinput-gestures
     xdotool
@@ -45,7 +45,7 @@
     ## fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
     ## icons
-    arc-icon-theme 
+    arc-icon-theme
     papirus-icon-theme
     lxappearance
 
@@ -64,11 +64,13 @@
     # daily
     chromium
     spotify
+    # (callPackage ./derivations/spotify-adblock.nix { })
     tdesktop
     libsForQt5.okular
     inkscape
     zoom-us
     keepassxc
+    grapejuice
     obsidian
     gimp
     safeeyes

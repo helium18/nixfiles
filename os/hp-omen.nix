@@ -30,13 +30,13 @@
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         amdvlk
-	mesa.drivers
+	    mesa.drivers
       ];
     };
 
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      nvidiaPersistenced = true;
+      # nvidiaPersistenced = true;
 
       prime = {
         offload.enable = true;
