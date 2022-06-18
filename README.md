@@ -26,5 +26,5 @@ Feel free to take inspiration (or steal stuff) from my dotfiles. If something's 
 <br>
 
 ![image](https://user-images.githubusercontent.com/86223025/173177942-aecd904f-a6c9-47cc-8841-6809e41679c4.png)
-![image](https://user-images.githubusercontent.com/86223025/173177956-2c34dbab-ecf2-48b5-998c-93be622c0e40.png)
+![image](https://user-images.githubusercontent.com/86223025/174433416-e9248a90-64fb-41e4-a7a2-b9a83455c187.png)
 
