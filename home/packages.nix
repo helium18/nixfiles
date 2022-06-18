@@ -1,11 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-    nativeOnly = true;
-  };
-
   home.packages = with pkgs; [
     # wm utils
     gnome.nautilus

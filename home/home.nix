@@ -1,19 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nur, ... }:
 
 {
-  imports = 
+  imports =
     [
       ./packages.nix
       ./wm.nix
       ./theme.nix
 
-      # modules
-      ./modules/git.nix
-      ./modules/neovim.nix
-      ./modules/z-shell.nix
-      ./modules/starship.nix
-      ./modules/kitty.nix
-      ./modules/rofi.nix
+      # programs
+      ./modules/programs/git.nix
+      ./modules/programs/neovim.nix
+      ./modules/programs/z-shell.nix
+      ./modules/programs/starship.nix
+      ./modules/programs/kitty.nix
+      ./modules/programs/rofi.nix
 
       # services 
       ./modules/services/picom.nix
@@ -23,22 +23,12 @@
       ./modules/services/dunst.nix
     ];
 
-    home.file = {
-      "scripts" = {
-        source = ./config/scripts;
-        target = "./.config/scripts";
-      };
-      # "eww" = {
-      #   source = ./config/eww;
-      #   target = "./.config/eww";
-      # };
+  home.file = {
+    "scripts" = {
+      source = ./config/scripts;
+      target = "./.config/scripts";
     };
-
-  # hm config
-  programs.home-manager.enable = true;
-  home = {
-    username = "helium";
-    homeDirectory = "/home/helium";
-    stateVersion = "22.05";
   };
+
+  programs.home-manager.enable = true;
 }

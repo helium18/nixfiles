@@ -2,12 +2,12 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       ./boot.nix
       ./net.nix
-      ./hp-omen.nix
-      ./helium.nix
+      ./systems/hp-omen.nix
+      ./users/helium.nix
       ./packages.nix
 
       # services

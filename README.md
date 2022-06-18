@@ -1,6 +1,6 @@
 <div align=center>
 
-# nix-dots
+# nixfiles
 
 [![NixOS](https://img.shields.io/badge/NixOS-unstable-informational.svg?logo=nixos)](https://nixos.org) ![License](https://img.shields.io/github/license/helium18/nix-dots) [![made with Neovim](https://img.shields.io/badge/made_with-Neovim-green.svg?logo=neovim)]([https://github.com/helium18/nix-dots](https://github.com/helium18/nix-dots/tree/main/home/config/neovim))
 

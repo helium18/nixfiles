@@ -18,7 +18,7 @@
       nerdtree
       tabular
       vim-css-color
-      vim-parinfer 
+      vim-parinfer
       vim-closetag
       indentLine
       vim-devicons
@@ -27,7 +27,7 @@
       vim-smoothie
 
       # yuck-vim isn't present in nixpkgs
-      (fennel-vim.overrideAttrs (oldAttrs: rec { 
+      (fennel-vim.overrideAttrs (oldAttrs: rec {
         src = pkgs.fetchFromGitHub {
           owner = "elkowar";
           repo = "yuck.vim";
@@ -53,9 +53,9 @@
       coc-json
       coc-css
       coc-lua
-    ]; 
+    ];
 
-    extraConfig = builtins.readFile ../config/neovim/init.vim;
+    extraConfig = builtins.readFile ../../config/neovim/init.vim;
 
     # coc
     coc = {
@@ -81,7 +81,7 @@
         "typescript.inlayHints.parameterTypes.enabled" = true;
         "typescript.inlayHints.propertyDeclarationTypes.enabled" = true;
         "typescript.inlayHints.variableTypes.enabled" = true;
-        "coc.preferences.formatOnSaveFiletypes" = ["*"];
+        "coc.preferences.formatOnSaveFiletypes" = [ "*" ];
         "eslint.filetypes" = [
           "javascript"
           "typescript"
