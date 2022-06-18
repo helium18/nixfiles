@@ -7,21 +7,13 @@
 </div>
 <br>
 <a href="https://nixos.org/"><img alt="NixOS logo" height="160" align = "left" src="https://nixos.wiki/images/thumb/2/20/Home-nixos-logo.png/311px-Home-nixos-logo.png"></a>
+<br><br>
 These are NixOS configuration files (aka dotfiles) 👾. I use NixOS with i3wm as a daily driver and home-manager to manage user-configuration files.
-<br><br>
-<br><br>
 
-<br><br><br>
-<img src="https://user-images.githubusercontent.com/86223025/173177840-593bbc25-3a39-4dc4-807c-de6a982e53b1.png" alt="image showing the desktop" align="right" width="51%">
+<br><br><br><br>
 
-| Type  | Used |
-| :---:  | :---:  |
-| OS  | [NixOS](https://nixos.org/)  |
-| Window Manager  | [i3-gaps](https://github.com/awesomeWM/awesome) + [eww](https://github.com/elkowar/eww)|
-| Terminal | [Kitty](https://sw.kovidgoyal.net/kitty/) |
-| Editor | [Neovim](https://neovim.io/) |
-| Shell | Zsh |
-| GTK theme | [Graphite-gtk-theme](https://github.com/vinceliuice/Graphite-gtk-theme) |
+<img src="https://user-images.githubusercontent.com/86223025/173177840-593bbc25-3a39-4dc4-807c-de6a982e53b1.png" alt="image showing the desktop" align="right" width="100%">
+
 
 <br>
 
@@ -43,3 +35,13 @@ These are NixOS configuration files (aka dotfiles) 👾. I use NixOS with i3wm a
 │   └── users
 └── outputs # home-manager and nixos glue flake config
 ```
+
+### Programs
+| Type  | Used |
+| :---:  | :---:  |
+| OS  | [NixOS](https://nixos.org/)  |
+| Window Manager  | [i3-gaps](https://github.com/awesomeWM/awesome) + [eww](https://github.com/elkowar/eww)|
+| Terminal | [Kitty](https://sw.kovidgoyal.net/kitty/) |
+| Editor | [Neovim](https://neovim.io/) |
+| Shell | Zsh |
+| GTK theme | [Graphite-gtk-theme](https://github.com/vinceliuice/Graphite-gtk-theme) |
