@@ -3,10 +3,10 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
       ./boot.nix
       ./net.nix
-      ./systems/hp-omen.nix
+      ./machines/hp-omen/hp-omen.nix
+      ./machines/hp-omen/hardware-configuration.nix
       ./users/helium.nix
       ./packages.nix
 
