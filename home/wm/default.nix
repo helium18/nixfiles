@@ -11,6 +11,10 @@ let
   right = "l";
 in
 {
+  imports = [
+    ./theme.nix
+  ];
+
   # wm config
   xsession = {
     enable = true;

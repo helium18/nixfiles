@@ -11,8 +11,8 @@
       ./packages.nix
 
       # services
-      ./services/xserver.nix
-      ./services/tlp.nix
+      ./services/xserver/default.nix
+      ./services/tlp/default.nix
     ];
 
   nixpkgs.config.allowUnfree = true;

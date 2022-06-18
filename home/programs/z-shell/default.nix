@@ -19,6 +19,8 @@
       ls = "exa --icons"; # exa superiority
       l = "exa --icons -a";
       grep = "rg";
+      hm = "home-manager --flake $HOME/nixfiles/#main build switch";
+      nigs = "nix build $HOME/nixfiles#nixosConfigurations.hp-omen.config.system.build.toplevel && sudo result/bin/switch-to-configuration switch && unlink result";
     };
 
     initExtraBeforeCompInit = ''

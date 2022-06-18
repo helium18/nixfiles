@@ -4,28 +4,27 @@
   imports =
     [
       ./packages.nix
-      ./wm.nix
-      ./theme.nix
+      ./wm/default.nix
 
       # programs
-      ./modules/programs/git.nix
-      ./modules/programs/neovim.nix
-      ./modules/programs/z-shell.nix
-      ./modules/programs/starship.nix
-      ./modules/programs/kitty.nix
-      ./modules/programs/rofi.nix
+      ./programs/git/default.nix
+      ./programs/neovim/default.nix
+      ./programs/z-shell/default.nix
+      ./programs/starship/default.nix
+      ./programs/kitty/default.nix
+      ./programs/rofi/default.nix
 
       # services 
-      ./modules/services/picom.nix
-      ./modules/services/libinput-gestures.nix
-      ./modules/services/redshift.nix
-      ./modules/services/systemd.nix
-      ./modules/services/dunst.nix
+      ./services/picom/default.nix
+      ./services/libinput-gestures/default.nix
+      ./services/redshift/default.nix
+      ./services/systemd/default.nix
+      ./services/dunst/default.nix
     ];
 
   home.file = {
     "scripts" = {
-      source = ./config/scripts;
+      source = ./scripts;
       target = "./.config/scripts";
     };
   };

@@ -55,7 +55,7 @@
       coc-lua
     ];
 
-    extraConfig = builtins.readFile ../../config/neovim/init.vim;
+    extraConfig = builtins.readFile ./config/init.vim;
 
     # coc
     coc = {

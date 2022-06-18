@@ -21,7 +21,7 @@
     # utils
     neofetch
     pfetch
-    (callPackage ./derivations/envycontrol.nix { })
+    (callPackage ./programs/envvycontrol/default.nix { })
     # (callPackage ./derivations/gh-eco/default.nix { })
     playerctl
     exa
@@ -59,7 +59,6 @@
     # daily
     chromium
     spotify
-    # (callPackage ./derivations/spotify-adblock.nix { })
     tdesktop
     libsForQt5.okular
     inkscape
