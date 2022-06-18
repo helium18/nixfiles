@@ -11,7 +11,7 @@ These are NixOS configuration files (aka dotfiles) 👾. I use NixOS with i3wm a
 <br><br>
 <br><br>
 
-<br><br>
+<br><br><br>
 <img src="https://user-images.githubusercontent.com/86223025/173177840-593bbc25-3a39-4dc4-807c-de6a982e53b1.png" alt="image showing the desktop" align="right" width="51%">
 
 | Type  | Used |
