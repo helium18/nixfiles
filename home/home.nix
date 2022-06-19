@@ -9,6 +9,7 @@
       # programs
       ./programs/git/default.nix
       ./programs/neovim/default.nix
+      # ./programs/spicetify/default.nix
       ./programs/z-shell/default.nix
       ./programs/starship/default.nix
       ./programs/kitty/default.nix

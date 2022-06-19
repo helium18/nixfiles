@@ -25,25 +25,8 @@
       vim-toml
       jsonc-vim
       vim-smoothie
-
-      # yuck-vim isn't present in nixpkgs
-      (fennel-vim.overrideAttrs (oldAttrs: rec {
-        src = pkgs.fetchFromGitHub {
-          owner = "elkowar";
-          repo = "yuck.vim";
-          rev = "6dc3da77c53820c32648cf67cbdbdfb6994f4e08";
-          sha256 = "sha256-lp7qJWkvelVfoLCyI0aAiajTC+0W1BzDhmtta7tnICE=";
-        };
-      }))
-      (tender-vim.overrideAttrs (oldAttrs: rec {
-        version = "2022-5-27";
-        src = pkgs.fetchFromGitHub {
-          owner = "helium18";
-          repo = "tender.vim";
-          rev = "b4e802ca58226e89647f140caf0f94432816daa2";
-          sha256 = "sha256-hbpAJvouBjOv/myh+djA8rUZG+EOPm5Hti3BF3eFbFQ=";
-        };
-      }))
+      yuck-vim
+      shrimp-vim
 
       # coc plugins
       coc-pyright
@@ -61,15 +44,7 @@
     coc = {
       enable = true;
 
-      package = (pkgs.vimPlugins.coc-nvim.overrideAttrs (oldAttrs: rec {
-        version = "2022-5-27";
-        src = pkgs.fetchFromGitHub {
-          owner = "neoclide";
-          repo = "coc.nvim";
-          rev = "325fbcec571e00c51546fb743e85be1fca8baf1a";
-          sha256 = "sha256-BS/HJE6aBn0yMY7WADQyF61kwGHznekdM33rkUg682I=";
-        };
-      }));
+      package = pkgs.vimPlugins.coc-nvim-overlay;
 
       settings = {
         "rust-analyzer.checkOnSave.command" = "clippy";

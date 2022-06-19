@@ -1,6 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
+  nixpkgs.overlays = [
+    (import ./overlays/envycontrol)
+    (import ./overlays/yuck-vim)
+    (import ./overlays/shrimp-vim)
+    (import ./overlays/coc-nvim)
+    (import ./overlays/picom)
+  ];
+
   home.packages = with pkgs; [
     # wm utils
     gnome.nautilus
@@ -21,8 +29,7 @@
     # utils
     neofetch
     pfetch
-    (callPackage ./programs/envvycontrol/default.nix { })
-    # (callPackage ./derivations/gh-eco/default.nix { })
+    envycontrol
     playerctl
     exa
     ripgrep
@@ -52,16 +59,15 @@
     qalculate-gtk
     bc
     gitui
-    # rustup
     jdk
     sumneko-lua-language-server
 
     # daily
     chromium
-    spotify
     tdesktop
     libsForQt5.okular
     inkscape
+    spotify
     zoom-us
     keepassxc
     grapejuice
