@@ -1,14 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  nixpkgs.overlays = [
-    (import ./overlays/envycontrol)
-    (import ./overlays/yuck-vim)
-    (import ./overlays/shrimp-vim)
-    (import ./overlays/coc-nvim)
-    (import ./overlays/picom)
-  ];
-
   home.packages = with pkgs; [
     # wm utils
     gnome.nautilus
