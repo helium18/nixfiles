@@ -49,13 +49,13 @@
     in
     {
       homeConfigurations = (
-        import ./outputs/hm-conf.nix {
+        import ./home/hm-conf.nix {
           inherit system nixpkgs nurpkgs home-manager inputs;
         }
       );
 
       nixosConfigurations = (
-        import ./outputs/os-conf.nix {
+        import ./os/os-conf.nix {
           inherit (nixpkgs) lib;
           inherit inputs system;
         }

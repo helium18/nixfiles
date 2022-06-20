@@ -2,11 +2,11 @@
 
 let
   overlays = [
-    (import ./../home/overlays/coc-nvim inputs)
-    (import ./../home/overlays/envycontrol inputs)
-    (import ./../home/overlays/picom inputs)
-    (import ./../home/overlays/shrimp-vim inputs)
-    (import ./../home/overlays/yuck-vim inputs)
+    (import ./overlays/coc-nvim inputs)
+    (import ./overlays/envycontrol inputs)
+    (import ./overlays/picom inputs)
+    (import ./overlays/shrimp-vim inputs)
+    (import ./overlays/yuck-vim inputs)
   ];
 
   pkgs = import nixpkgs {
@@ -18,13 +18,12 @@ let
     inherit pkgs;
     nurpkgs = pkgs;
   };
-in
-{
-  helium = home-manager.lib.homeManagerConfiguration rec {
+
+  mkHome = user: home-manager.lib.homeManagerConfiguration rec {
     inherit pkgs system;
 
-    username = "helium";
-    homeDirectory = "/home/${username}";
+    username = user;
+    homeDirectory = "/home/${user}";
     stateVersion = "22.05";
 
     configuration = {
@@ -32,5 +31,8 @@ in
       imports = [ ../home/home.nix ];
     };
   };
+in
+{
+  helium = mkHome "helium";
 }
 

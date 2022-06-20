@@ -3,6 +3,6 @@
 {
   hp-omen = lib.nixosSystem {
     inherit system;
-    modules = [ ../os/configuration.nix ];
+    modules = [ ./configuration.nix ];
   };
 }
