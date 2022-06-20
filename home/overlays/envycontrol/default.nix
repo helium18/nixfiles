@@ -1,5 +1,3 @@
-self: super:
-
-{
-  envycontrol = super.callPackage ./envycontrol.nix { };
+inputs: final: prev:  {
+  envycontrol = prev.callPackage ./envycontrol.nix { envycontrol = inputs.envycontrol; };
 }

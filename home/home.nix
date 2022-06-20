@@ -4,23 +4,22 @@
   imports =
     [
       ./packages.nix
-      ./wm/default.nix
+      ./wm
 
       # programs
-      ./programs/git/default.nix
-      ./programs/neovim/default.nix
-      # ./programs/spicetify/default.nix
-      ./programs/z-shell/default.nix
-      ./programs/starship/default.nix
-      ./programs/kitty/default.nix
-      ./programs/rofi/default.nix
+      ./programs/git
+      ./programs/neovim
+      ./programs/z-shell
+      ./programs/starship
+      ./programs/kitty
+      ./programs/rofi
 
       # services 
-      ./services/picom/default.nix
-      ./services/libinput-gestures/default.nix
-      ./services/redshift/default.nix
-      ./services/systemd/default.nix
-      ./services/dunst/default.nix
+      ./services/picom
+      ./services/libinput-gestures
+      ./services/redshift
+      ./services/systemd
+      ./services/dunst
     ];
 
   home.file = {

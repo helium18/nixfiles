@@ -15,6 +15,32 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    # -- Programs --
+    coc-nvim = {
+      url = github:neoclide/coc.nvim/release;
+      flake = false;
+    };
+
+    envycontrol = {
+      url = github:geminis3/envycontrol;
+      flake = false;
+    };
+
+    picom = {
+      url = github:ibhagwan/picom;
+      flake = false;
+    };
+
+    shrimp-vim = {
+      url = github:helium18/tender.vim;
+      flake = false;
+    };
+
+    yuck-vim = {
+      url = github:elkowar/yuck.vim;
+      flake = false;
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, nurpkgs, flake-utils, home-manager, ... }:
@@ -24,7 +50,7 @@
     {
       homeConfigurations = (
         import ./outputs/hm-conf.nix {
-          inherit system nixpkgs nurpkgs home-manager;
+          inherit system nixpkgs nurpkgs home-manager inputs;
         }
       );
 
