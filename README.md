@@ -25,15 +25,26 @@ These are NixOS configuration files (aka dotfiles) 👾. I use NixOS with i3wm a
 ```
 .
 ├── home
-│   ├── programs 
-│   ├── scripts # Bash scripts for eww and misc keyboard shortcuts
-│   ├── services # User services
-│   └── wm # i3-configuration
-├── os
-│   ├── machines 
-│   ├── services # privileged services
-│   └── users
-└── outputs # home-manager and nixos glue flake config
+│   ├── overlays # contains overlays https://nixos.wiki/wiki/Overlays
+│   ├── programs # user program configurations
+│   ├── scripts # misc bash scripts
+│   ├── services # user=services
+│   ├── wm # wm config
+│   ├── hm-conf.nix # glue b/w flake.nix & home.nix
+│   ├── home.nix 
+│   └── packages.nix 
+└── os
+    ├── machines
+    │   └── hp-omen
+    ├── services # privileged services
+    │   ├── tlp
+    │   └── xserver
+    ├── users 
+    ├── boot.nix # boot conf
+    ├── configuration.nix 
+    ├── net.nix # networking
+    ├── os-conf.nix # glue b/w flake.nix & configuration.nix
+    └── packages.nix
 ```
 
 ### Programs
