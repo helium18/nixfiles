@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,10 +7,11 @@
     obs-studio
     bottom
     brightnessctl
-    eww
     flameshot
     libinput-gestures
     xdotool
+    eww
+    # inputs.eww.packages."x86_64-linux".eww
     acpid # for acpi_listen used by `refresh` script in ~/.config/scripts
     feh # bg
     maim # ss
