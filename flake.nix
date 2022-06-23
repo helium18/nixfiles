@@ -20,22 +20,39 @@
     yuck-vim = { url = github:elkowar/yuck.vim; flake = false; };
   };
 
-  outputs = inputs @ { self, nixpkgs, nurpkgs, flake-utils, home-manager, ... }:
+  outputs = inputs @ { self, ... }:
     let
+      inherit (inputs.home-manager.lib) homeManagerConfiguration;
+      inherit (inputs.nixpkgs.lib) nixosSystem;
+      inherit (inputs.nixpkgs) lib;
+
       system = "x86_64-linux";
+
+      overlays = [
+        (import ./overlays/coc-nvim inputs)
+        (import ./overlays/envycontrol inputs)
+        (import ./overlays/picom inputs)
+        (import ./overlays/shrimp-vim inputs)
+        (import ./overlays/yuck-vim inputs)
+      ];
     in
     {
-      homeConfigurations = (
-        import ./home/hm-conf.nix {
-          inherit system nixpkgs nurpkgs home-manager inputs;
-        }
-      );
+      # -- Hosts --
+      nixosConfigurations.hp-omen = nixosSystem
+        (import ./hosts/hp-omen { inherit lib system inputs; });
+      hp-omen = self.nixosConfigurations.hp-omen.config.system.build.toplevel;
 
-      nixosConfigurations = (
-        import ./os/os-conf.nix {
-          inherit (nixpkgs) lib;
-          inherit inputs system;
-        }
-      );
+      nixosConfigurations.lenovo-c200 = nixosSystem
+        (import ./hosts/lenovo-c200 { inherit lib system inputs; });
+      lenovo-c200 = self.nixosConfigurations.lenovo-c200.config.system.build.toplevel;
+
+      # -- Users --
+      homeConfigurations.helium = homeManagerConfiguration
+        (import ./users/helium { inherit system inputs overlays; });
+      helium = self.homeConfigurations.helium.activationPackage;
+
+      homeConfigurations.brick = homeManagerConfiguration
+        (import ./users/brick { inherit system inputs overlays; });
+      brick = self.homeConfigurations.brick.activationPackage;
     };
 }

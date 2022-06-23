@@ -1,6 +1,21 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ./boot.nix
+      ./net.nix
+      ./hardware-configuration.nix
+      ./packages.nix
+      ./xserver.nix
+    ];
+
+  # -- User --
+  users.users.helium = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "input" ];
+  };
+
   # sound
   services.pipewire = {
     enable = true;
@@ -30,7 +45,7 @@
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         amdvlk
-	    mesa.drivers
+        mesa.drivers
       ];
     };
 
@@ -40,7 +55,7 @@
 
       prime = {
         offload.enable = true;
-	    amdgpuBusId = "PCI:6:0:0";
+        amdgpuBusId = "PCI:6:0:0";
         nvidiaBusId = "PCI:1:0:0";
       };
     };
@@ -57,4 +72,19 @@
       exec -a "$0" "$@"
     '')
   ];
+
+  # -- Misc -- 
+  nixpkgs.config.allowUnfree = true;
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    };
+  };
+
+  time.timeZone = "Asia/Kolkata";
+
+  system.stateVersion = "21.11";
 }
+

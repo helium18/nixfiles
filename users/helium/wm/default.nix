@@ -131,7 +131,7 @@ in
 
           startup = [
             {
-              command = "${pkgs.feh}/bin/feh --bg-scale ~/Downloads/mount.jpg"; # fix me (cloudy.png -> bg.png)
+              command = "${pkgs.feh}/bin/feh --bg-fill ~/Downloads/tokyo-night10-2.png"; # fix me (cloudy.png -> bg.png)
               always = true;
               notification = false;
             }

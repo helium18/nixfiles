@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -16,9 +12,9 @@
       # touchpad 
       libinput = {
         enable = true;
-	touchpad = {
-	 naturalScrolling = true;
-	};
+        touchpad = {
+          naturalScrolling = true;
+        };
       };
 
       dpi = 135;
@@ -27,26 +23,26 @@
         lightdm = {
           enable = true;
 
-	  greeters = {
-	    gtk = {
-	      enable = true;
+          greeters = {
+            gtk = {
+              enable = true;
 
-	      theme = {
-	        name = "Graphite-dark";
-	        package = pkgs.graphite-gtk-theme.override { 
-                  tweaks = [ "rimless" ]; 
-                  themeVariants = [ "default" ]; 
+              theme = {
+                name = "Graphite-dark";
+                package = pkgs.graphite-gtk-theme.override {
+                  tweaks = [ "rimless" ];
+                  themeVariants = [ "default" ];
                   colorVariants = [ "dark" ];
                 };
-	      };
+              };
 
-	      iconTheme = {
-      		name = "papirus";
-      		package = pkgs.papirus-icon-theme;
-    	      };
-	    };
-	  };
-	};
+              iconTheme = {
+                name = "papirus";
+                package = pkgs.papirus-icon-theme;
+              };
+            };
+          };
+        };
       };
 
       # drivers
@@ -63,9 +59,9 @@
           {
             name = "home-manager";
             start = ''
-              ${pkgs.runtimeShell} $HOME/.xsession &
-	     waitPID=$!
-	   '';
+                            ${pkgs.runtimeShell} $HOME/.xsession &
+              	     waitPID=$!
+              	   '';
           }
         ];
       };
@@ -78,6 +74,6 @@
       ];
 
       xkbOptions = "caps:swapescape"; # swap escape and caps 
-    };    
-  };      
+    };
+  };
 }
