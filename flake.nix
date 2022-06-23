@@ -8,11 +8,11 @@
 
     # -- Utils --
     home-manager = { url = github:nix-community/home-manager; inputs.nixpkgs.follows = "nixpkgs"; };
-    flake-utils.url = "github:numtide/flake-utils";
 
     # -- Programs --
     envycontrol = { url = github:geminis3/envycontrol; flake = false; };
     picom = { url = github:ibhagwan/picom; flake = false; };
+    flameshot = { url = github:flameshot-org/flameshot; flake = false; };
 
     ## -- Vim Plugins --
     coc-nvim = { url = github:neoclide/coc.nvim/release; flake = false; };
@@ -34,6 +34,7 @@
         (import ./overlays/picom inputs)
         (import ./overlays/shrimp-vim inputs)
         (import ./overlays/yuck-vim inputs)
+        (import ./overlays/flameshot inputs)
       ];
     in
     {
