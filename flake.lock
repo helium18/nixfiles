@@ -89,6 +89,22 @@
         "type": "github"
       }
     },
+    "neovim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656032696,
+        "narHash": "sha256-GFGsaJqnmtCdfmB1ptJ9jJJ7Ro2yS2NYYHapGHZZMQM=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "3a4fa22badc5595afc0a994ead965ff32ccf6c76",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1655400192,
@@ -173,6 +189,7 @@
         "envycontrol": "envycontrol",
         "flameshot": "flameshot",
         "home-manager": "home-manager",
+        "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "nurpkgs": "nurpkgs",
         "picom": "picom",

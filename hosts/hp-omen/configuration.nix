@@ -8,6 +8,7 @@
       ./hardware-configuration.nix
       ./packages.nix
       ./xserver.nix
+      ../../modules/services/tlp
     ];
 
   # -- User --

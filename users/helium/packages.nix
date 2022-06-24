@@ -5,6 +5,7 @@
     # wm utils
     gnome.nautilus
     obs-studio
+    peek
     bottom
     brightnessctl
     flameshot

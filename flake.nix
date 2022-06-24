@@ -13,6 +13,7 @@
     envycontrol = { url = github:geminis3/envycontrol; flake = false; };
     picom = { url = github:ibhagwan/picom; flake = false; };
     flameshot = { url = github:flameshot-org/flameshot; flake = false; };
+    neovim = { url = github:neovim/neovim; flake = false; };
 
     ## -- Vim Plugins --
     coc-nvim = { url = github:neoclide/coc.nvim/release; flake = false; };
@@ -35,6 +36,7 @@
         (import ./overlays/shrimp-vim inputs)
         (import ./overlays/yuck-vim inputs)
         (import ./overlays/flameshot inputs)
+        (import ./overlays/neovim inputs)
       ];
     in
     {
