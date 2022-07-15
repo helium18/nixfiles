@@ -101,6 +101,7 @@
       },
       "original": {
         "owner": "neovim",
+        "ref": "master",
         "repo": "neovim",
         "type": "github"
       }

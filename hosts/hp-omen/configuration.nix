@@ -77,6 +77,8 @@
   # -- Misc -- 
   nixpkgs.config.allowUnfree = true;
 
+  services.gnome.sushi.enable = true;
+
   xdg = {
     portal = {
       enable = true;

@@ -61,8 +61,9 @@
     tdesktop
     libsForQt5.okular
     inkscape
-    spotify
+    spotify-adblock
     zoom-us
+    onlyoffice-bin
     keepassxc
     grapejuice
     obsidian
