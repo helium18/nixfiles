@@ -1,4 +1,4 @@
-{ fetchFromGitHub }:
+{ rustPlatform, fetchFromGitHub }:
 
 rustPlatform.buildRustPackage rec {
   pname = "spotify-adblock";
@@ -12,4 +12,12 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoSha256 = "sha256-bYqkCooBfGeHZHl2/9Om+0qbudyOCzpvwMhy8QCsPRE=";
+
+  postInstall = ''
+    mkdir -p $out/usr/local/lib
+    mkdir -p $out/etc/spotify-adblock
+
+    mv $out/lib/libspotifyadblock.so $out/usr/local/lib/spotify-adblock.so 
+    mv config.toml $out/etc/spotify-adblock
+  '';
 }

@@ -1,5 +1,6 @@
 { fetchurl
 , lib
+, adblock
 , stdenv
 , spicetify-cli
 , squashfsTools
@@ -146,6 +147,9 @@ stdenv.mkDerivation {
       # Desktop file
       mkdir -p "$out/share/applications/"
       cp "$out/share/spotify/spotify.desktop" "$out/share/applications/"
+
+      substituteInPlace "$out/share/applications/spotify.desktop" \
+        --replace 'Exec=spotify %U' 'Exec=env LD_PRELOAD=${adblock}/usr/local/lib/spotify-adblock.so spotify %U'
 
       # Icons
       for i in 16 22 24 32 48 64 128 256 512; do

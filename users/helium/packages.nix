@@ -22,8 +22,10 @@
 
     # utils
     neofetch
+    thunderbird
     pfetch
     envycontrol
+    syncthing
     playerctl
     exa
     ripgrep
@@ -61,7 +63,8 @@
     tdesktop
     libsForQt5.okular
     inkscape
-    spotify-adblock
+    # spotify-adblock
+    spotify
     zoom-us
     onlyoffice-bin
     keepassxc
