@@ -2,7 +2,7 @@
 
 let
   pkgs = import inputs.nixpkgs {
-    inherit system;
+    inherit system overlays;
     config.allowUnfree = true;
   };
 
@@ -12,16 +12,18 @@ let
   };
 in
 {
-  inherit pkgs system;
+  inherit pkgs;
 
-  username = "brick";
-  homeDirectory = "/home/helium";
-  stateVersion = "21.11";
-  extraSpecialArgs = { inherit inputs; };
-
-  configuration = {
-    nixpkgs.overlays = overlays;
-    imports = [ ./home.nix ];
-  };
+  modules = [
+    ./home.nix
+    {
+      home = {
+        username = "brick";
+        homeDirectory = "/home/helium";
+        stateVersion = "22.05";
+      };
+    }
+  ];
 }
+
 
